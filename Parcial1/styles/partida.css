@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@400;700&display=swap');
+
+body{
+    background-image: url('../images/background_juego.jpg');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #FD8D10;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+}
+
+header{
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    background: rgba(7, 2, 10, 0.9);
+    border-bottom: 3px solid #FF5404;
+    box-shadow: 0 0 20px rgba(255, 84, 4, 0.5);
+}
+
+header h2{
+    color: #FD8D10;
+    text-shadow: 3px 3px 6px #000, 0 0 20px #FF5404;
+    font-family: 'Creepster', cursive;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+#info-categoria{
+    grid-column: 2;
+    justify-self: center;
+    text-align: center;
+    color: #FD8D10;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.info-partida{
+    grid-column: 3;
+    justify-self: end;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 6px 20px;
+}
+
+.info-partida span{
+    color: #FD8D10;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.btn-abandonar{
+    background: linear-gradient(135deg, #FF5404, #FD8D10);
+    color: #07020A;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: normal;
+    font-family: 'Creepster', cursive;
+    font-size: 1.3em;
+    letter-spacing: 2px;
+    box-shadow: 0 5px 15px rgba(255, 84, 4, 0.4);
+}
+
+.btn-abandonar:hover{
+    background: linear-gradient(135deg, #FD8D10, #FF5404);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(253, 141, 16, 0.6);
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.temporizador-container{
+    text-align: center;
+    margin-bottom: 30px;
+    background: #000;
+    border: 3px solid #FF5404;
+    border-radius: 15px;
+    padding: 6px 30px;
+    min-width: 190px;
+    box-shadow: 0 0 20px rgba(255, 84, 4, 0.6);
+}
+
+.temporizador{
+    font-size: 5em;
+    font-weight: bold;
+    color: #FD8D10;
+    text-shadow: 3px 3px 6px #000, 0 0 30px #FF5404;
+    font-family: 'Creepster', cursive;
+    animation: pulse 1s infinite;
+}
+
+.temporizador.critico{
+    color: #FF5404;
+    text-shadow: 3px 3px 6px #000, 0 0 30px #FD8D10;
+    animation: pulse-critico 0.5s infinite;
+}
+
+@keyframes pulse{
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes pulse-critico{
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.temporizador-label{
+    color: #FD8D10;
+    font-size: 1.3em;
+    text-shadow: 2px 2px 4px #000;
+    font-weight: bold;
+}
+
+.pregunta-container{
+    width: 90%;
+    max-width: 900px;
+    background: rgba(7, 2, 10, 0.9);
+    border: 3px solid #FF5404;
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 30px rgba(255, 84, 4, 0.5), inset 0 0 20px rgba(130, 103, 208, 0.3);
+}
+
+#pregunta-enunciado{
+    color: #FD8D10;
+    text-shadow: 3px 3px 6px #000, 0 0 20px #FF5404;
+    font-size: 1.8em;
+    margin-bottom: 35px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.opciones-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.opcion-btn{
+    background: rgba(7, 2, 10, 0.95);
+    color: #FD8D10;
+    border: 2px solid #FF5404;
+    border-radius: 15px;
+    padding: 25px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Creepster', cursive;
+    font-weight: normal;
+    box-shadow: 0 5px 15px rgba(255, 84, 4, 0.3);
+    text-align: center;
+}
+
+.opcion-btn:hover:not(:disabled){
+    background: rgba(80, 44, 118, 0.9);
+    border-color: #FD8D10;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(253, 141, 16, 0.5);
+}
+
+.opcion-btn.correcta{
+    background: linear-gradient(135deg, #00ff00, #00cc00);
+    color: #07020A;
+    border-color: #00aa00;
+    transform: scale(1.02);
+}
+
+.opcion-btn.incorrecta{
+    background: linear-gradient(135deg, #ff0000, #cc0000);
+    color: #ffffff;
+    border-color: #aa0000;
+    transform: scale(1.02);
+}
+
+.opcion-btn:disabled{
+    cursor: not-allowed;
+}
+
+.feedback-container{
+    background: rgba(7, 2, 10, 0.95);
+    border: 3px solid #FF5404;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(255, 84, 4, 0.5);
+}
+
+.feedback-container.oculto{
+    display: none;
+}
+
+#feedback-mensaje{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 12px;
+    font-family: 'Creepster', cursive;
+    letter-spacing: 1px;
+}
+
+#feedback-mensaje.correcto{
+    color: #00ff00;
+    text-shadow: 2px 2px 4px #000;
+}
+
+#feedback-mensaje.incorrecto{
+    color: #ff0000;
+    text-shadow: 2px 2px 4px #000;
+}
+
+#feedback-correcta{
+    color: #FD8D10;
+    font-size: 1.2em;
+    text-shadow: 2px 2px 4px #000;
+    font-weight: bold;
+}
+
+.racha-container{
+    display: flex;
+    gap: 50px;
+    background: rgba(7, 2, 10, 0.9);
+    border: 3px solid #FF5404;
+    border-radius: 15px;
+    padding: 20px 40px;
+    box-shadow: 0 0 20px rgba(255, 84, 4, 0.5);
+}
+
+.racha-container span{
+    color: #FD8D10;
+    font-size: 1.3em;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.racha-container strong{
+    color: #FD8D10;
+    font-size: 1.6em;
+    text-shadow: 0 0 10px #FF5404;
+}
+
+/* Pantallas bajas: se compacta para que la partida entre sin desplazarse */
+@media (max-height: 1000px){
+    header{ padding: 10px 20px; }
+    header h2{ font-size: 2em; }
+    main{ padding: 16px 20px; }
+    .temporizador-container{ margin-bottom: 10px; }
+    .temporizador{ font-size: 3.5em; line-height: 1; }
+    .temporizador-label{ font-size: 1.1em; margin: 4px 0 0; }
+    .pregunta-container{ padding: 24px; margin-bottom: 14px; }
+    #pregunta-enunciado{ font-size: 1.5em; margin: 0 0 18px; }
+    .opciones-container{ gap: 14px; }
+    .opcion-btn{ padding: 14px; }
+    .feedback-container{ padding: 10px; min-height: 70px; margin-bottom: 12px; }
+    #feedback-mensaje{ margin: 0 0 6px; }
+    #feedback-correcta{ margin: 0; }
+    .racha-container{ padding: 10px 30px; gap: 40px; }
+}
+@media (max-height: 760px){
+    .temporizador{ font-size: 2.6em; }
+    .pregunta-container{ padding: 16px; }
+    #pregunta-enunciado{ font-size: 1.25em; margin-bottom: 12px; }
+    .opcion-btn{ padding: 10px; font-size: 1.3em; }
+    .feedback-container{ min-height: 56px; }
+}
+
+/* Pie de la partida: racha al fondo y Abandonar en la esquina inferior derecha */
+.pie-partida{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 20px 16px;
+}
+
+.pie-partida .racha-container{
+    grid-column: 2;
+    background: rgba(7, 2, 10, 0.7);
+    padding: 8px 28px;
+    gap: 36px;
+    box-shadow: 0 0 15px rgba(255, 84, 4, 0.4);
+}
+
+.pie-partida .racha-container span{
+    font-size: 1.1em;
+}
+
+.pie-partida .racha-container strong{
+    font-size: 1.4em;
+}
+
+.acciones-partida{
+    grid-column: 3;
+    justify-self: end;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px 20px;
+}
+
+/* Temporizador encuadrado: fondo naranja y letras negras para que no se camufle con el sol */
+.temporizador-container{
+    background: linear-gradient(135deg, #FF5404, #FD8D10);
+    border: 3px solid #07020A;
+    border-radius: 15px;
+    padding: 6px 28px 8px;
+    box-shadow: 0 0 0 2px #FD8D10, 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+.temporizador,
+.temporizador.critico{
+    color: #07020A;
+    text-shadow: none;
+}
+
+.temporizador-label{
+    color: #07020A;
+    text-shadow: none;
+}
+
+.temporizador-container:has(.temporizador.critico){
+    background: linear-gradient(135deg, #FF2B00, #FF5404);
+}

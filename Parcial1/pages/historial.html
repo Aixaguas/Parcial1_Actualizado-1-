@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío Mental - Historial</title>
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/historial.css">
+    <script src="../scripts/usuarios.js"></script>
+    <script src="../scripts/partidas.js"></script>
+    <script src="../scripts/historial.js"></script>
+</head>
+<body onload="CargarPagina();">
+    <header>
+        <h2>Desafío Mental - Historial</h2>
+        <button class="btn-volver" id="btn-volver">Volver al Menú</button>
+    </header>
+    <main>
+        <div class="filtros-container">
+            <h3>Filtros</h3>
+            <div class="filtro-group">
+                <label for="filtro-categoria">Categoría:</label>
+                <select id="filtro-categoria">
+                    <option value="">Todas</option>
+                </select>
+            </div>
+            <div class="filtro-group">
+                <label for="filtro-estado">Estado:</label>
+                <select id="filtro-estado">
+                    <option value="">Todos</option>
+                    <option value="completada">Completada</option>
+                    <option value="abandonada">Abandonada</option>
+                </select>
+            </div>
+            <button class="btn-filtrar" id="btn-filtrar">Filtrar</button>
+            <button class="btn-limpiar" id="btn-limpiar">Limpiar Filtros</button>
+        </div>
+        
+        <div class="historial-container">
+            <h3>Historial de Partidas</h3>
+            <div id="tabla-historial">
+                <table id="tabla-partidas">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Categoría</th>
+                            <th>Puntaje</th>
+                            <th>Correctas</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpo-tabla">
+                        <!-- Las filas se generarán dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+            <p id="mensaje-vacio" class="oculto">No hay partidas registradas</p>
+        </div>
+        
+        <div class="resumen-container">
+            <h3>Resumen del Historial</h3>
+            <div class="resumen-grid">
+                <div class="resumen-item">
+                    <p class="resumen-label">Partidas Completadas</p>
+                    <p class="resumen-valor" id="resumen-completadas">0</p>
+                </div>
+                <div class="resumen-item">
+                    <p class="resumen-label">Partidas Abandonadas</p>
+                    <p class="resumen-valor" id="resumen-abandonadas">0</p>
+                </div>
+                <div class="resumen-item">
+                    <p class="resumen-label">Puntaje Acumulado</p>
+                    <p class="resumen-valor" id="resumen-puntaje">0</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

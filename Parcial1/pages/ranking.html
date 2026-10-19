@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío Mental - Ranking</title>
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/ranking.css">
+    <script src="../scripts/usuarios.js"></script>
+    <script src="../scripts/partidas.js"></script>
+    <script src="../scripts/ranking.js"></script>
+</head>
+<body onload="CargarPagina();">
+    <header>
+        <h2>Desafío Mental - Ranking Top 10</h2>
+        <button class="btn-volver" id="btn-volver">Volver al Menú</button>
+    </header>
+    <main>
+        <div class="ranking-container">
+            <h3>Mejores Partidas</h3>
+            <div id="tabla-ranking">
+                <table id="tabla-partidas">
+                    <thead>
+                        <tr>
+                            <th>Posición</th>
+                            <th>Usuario</th>
+                            <th>Puntaje</th>
+                            <th>Categoría</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpo-tabla">
+                        <!-- Las filas se generarán dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+            <p id="mensaje-vacio" class="oculto">No hay partidas completadas en el ranking</p>
+        </div>
+    </main>
+</body>
+</html>

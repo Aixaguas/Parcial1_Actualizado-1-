@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío Mental - Resultados</title>
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/resultados.css">
+    <script src="../scripts/usuarios.js"></script>
+    <script src="../scripts/resultados.js"></script>
+</head>
+<body onload="CargarPagina();">
+    <header>
+        <h2>Desafío Mental - Resultados</h2>
+    </header>
+    <main>
+        <div class="resultados-container">
+            <h3 id="mensaje-desempeno"></h3>
+            
+            <div class="estadisticas-grid">
+                <div class="estadistica-item">
+                    <p class="estadistica-label">Puntaje Total</p>
+                    <p class="estadistica-valor" id="puntaje-total">0</p>
+                </div>
+                <div class="estadistica-item">
+                    <p class="estadistica-label">Respuestas Correctas</p>
+                    <p class="estadistica-valor" id="respuestas-correctas">0</p>
+                </div>
+                <div class="estadistica-item">
+                    <p class="estadistica-label">Respuestas Incorrectas</p>
+                    <p class="estadistica-valor" id="respuestas-incorrectas">0</p>
+                </div>
+                <div class="estadistica-item">
+                    <p class="estadistica-label">Porcentaje Correctas</p>
+                    <p class="estadistica-valor" id="porcentaje-correctas">0%</p>
+                </div>
+                <div class="estadistica-item">
+                    <p class="estadistica-label">Mejor Racha</p>
+                    <p class="estadistica-valor" id="mejor-racha">0</p>
+                </div>
+                <div class="estadistica-item">
+                    <p class="estadistica-label">Duración</p>
+                    <p class="estadistica-valor" id="duracion">0s</p>
+                </div>
+                <div class="estadistica-item">
+                    <p class="estadistica-label">Categoría</p>
+                    <p class="estadistica-valor" id="categoria">-</p>
+                </div>
+                <div class="estadistica-item">
+                    <p class="estadistica-label">Fecha</p>
+                    <p class="estadistica-valor" id="fecha">-</p>
+                </div>
+            </div>
+            
+            <div class="botones-container">
+                <button class="btn-accion" id="btn-menu">Volver al Menú</button>
+                <button class="btn-accion" id="btn-nueva">Nueva Partida</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

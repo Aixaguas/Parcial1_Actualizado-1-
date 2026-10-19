@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío Mental - Partida</title>
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/partida.css">
+    <script src="../scripts/usuarios.js"></script>
+    <script src="../scripts/partidas.js"></script>
+    <script src="../scripts/partida.js"></script>
+</head>
+<body onload="CargarPagina();">
+    <header>
+        <h2>Desafío Mental - Partida</h2>
+        <span id="info-categoria"></span>
+        <div class="info-partida">
+            <span id="info-pregunta"></span>
+            <span id="info-puntaje"></span>
+        </div>
+    </header>
+    <main>
+        <div class="temporizador-container">
+            <div class="temporizador" id="temporizador">15</div>
+            <p class="temporizador-label">segundos restantes</p>
+        </div>
+        
+        <div class="pregunta-container">
+            <h3 id="pregunta-enunciado"></h3>
+            <div class="opciones-container" id="opciones-container">
+                <!-- Las opciones se generarán dinámicamente -->
+            </div>
+        </div>
+        
+        <div class="feedback-container" id="feedback-container">
+            <p id="feedback-mensaje"></p>
+            <p id="feedback-correcta"></p>
+        </div>
+        
+    </main>
+    <footer class="pie-partida">
+        <div class="racha-container">
+            <span>Racha actual: <strong id="racha-actual">0</strong></span>
+            <span>Mejor racha: <strong id="mejor-racha">0</strong></span>
+        </div>
+        <div class="acciones-partida">
+            <button class="btn-abandonar" id="btn-abandonar">Abandonar</button>
+        </div>
+    </footer>
+</body>
+</html>

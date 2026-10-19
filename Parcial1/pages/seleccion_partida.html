@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío Mental - Selección de Partida</title>
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/seleccion_partida.css">
+    <script src="../scripts/usuarios.js"></script>
+    <script src="../scripts/preguntas.js"></script>
+    <script src="../scripts/seleccion_partida.js"></script>
+</head>
+<body onload="CargarPagina();">
+    <header>
+        <h2>Desafío Mental - Selección de Partida</h2>
+        <button class="btn-volver" id="btn-volver">Volver al Menú</button>
+    </header>
+    <main>
+        <form id="form-seleccion">
+            <h3>Configura tu partida</h3>
+            
+            <div class="form-group">
+                <label for="categoria">Categoría:</label>
+                <select id="categoria" name="categoria" required>
+                    <option value="">Seleccionar categoría</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="cantidad">Cantidad de preguntas:</label>
+                <select id="cantidad" name="cantidad" required>
+                    <option value="">Seleccionar cantidad</option>
+                    <option value="5">5 preguntas</option>
+                    <option value="10">10 preguntas</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn-iniciar">Iniciar Partida</button>
+        </form>
+    </main>
+</body>
+</html>

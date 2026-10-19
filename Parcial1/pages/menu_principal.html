@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío Mental</title>
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/menu_principal.css">
+    <script src="../scripts/usuarios.js"></script>
+    <script src="../scripts/preguntas.js"></script>
+    <script src="../scripts/partidas.js"></script>
+    <script src="../scripts/menu_principal.js"></script>
+</head>
+<body onload="CargarPagina();">
+    <header>
+        <h2>Bienvenido a Desafío Mental</h2>
+        <nav>
+            <button class="btn-menu" id="btn-partida">
+                Partida
+            </button>
+            <button class="btn-menu" id="btn-ranking">
+                Ranking
+            </button>
+            <button class="btn-menu" id="btn-historial">
+                Historial
+            </button>
+            <button class="btn-menu" id="btn-estadisticas">
+                Estadísticas
+            </button>
+            <button class="btn-menu" id="btn-cerrar-sesion">
+                Cerrar Sesión
+            </button>
+        </nav>
+    </header>
+    <main>
+        <h2 id="mensajeBienvenida"></h2>
+        <div id="indicador-carga" class="oculto">
+            <div class="spinner"></div>
+            <p>Cargando preguntas...</p>
+        </div>
+        <div id="seccion-estadisticas" class="oculto">
+            <h3>Estadísticas Personales</h3>
+            <div class="estadisticas-grid">
+                <div class="estadistica-item">
+                    <p class="estadistica-label">Partidas Completadas</p>
+                    <p class="estadistica-valor" id="stat-partidas">0</p>
+                </div>
+                <div class="estadistica-item">
+                    <p class="estadistica-label">Preguntas Respondidas</p>
+                    <p class="estadistica-valor" id="stat-preguntas">0</p>
+                </div>
+                <div class="estadistica-item">
+                    <p class="estadistica-label">% Correctas</p>
+                    <p class="estadistica-valor" id="stat-porcentaje">0%</p>
+                </div>
+                <div class="estadistica-item">
+                    <p class="estadistica-label">Puntaje Más Alto</p>
+                    <p class="estadistica-valor" id="stat-max-puntaje">0</p>
+                </div>
+                <div class="estadistica-item">
+                    <p class="estadistica-label">Mejor Racha</p>
+                    <p class="estadistica-valor" id="stat-mejor-racha">0</p>
+                </div>
+            </div>
+            <div class="estadisticas-categoria">
+                <h4>Estadísticas por Categoría</h4>
+                <select id="select-categoria-estadistica">
+                    <option value="">Seleccionar categoría</option>
+                </select>
+                <p id="estadistica-categoria-resultado">Seleccione una categoría</p>
+            </div>
+        </div>
+        <div id="error-carga" class="oculto">
+            <p>Error al cargar las preguntas</p>
+            <button class="btn-reintentar" id="btn-reintentar">Reintentar</button>
+        </div>
+    </main>
+</body>
+</html>
